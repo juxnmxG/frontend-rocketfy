@@ -22,10 +22,8 @@ Este proyecto es un catálogo de productos con la capacidad de mantener un histo
 ![Screenshot_1](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/095572ad-81ce-436c-b2b2-c36af94735ef)
 
 - **Panel Administrativo:** al dar click en el dropdown de la barra de navegacion se despliega un menu donde podemos dar click en la opción de dasboard que nos llevara a una pagina donde se visualizaran los productos existentes y habra un boton de crear.
-  ![Screenshot_5](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/774c6e39-6303-42cd-9d5f-817ca7a33603)
+![Screenshot_5](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/774c6e39-6303-42cd-9d5f-817ca7a33603)
 ![Screenshot_7](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/5bcaf9d4-bac1-49ee-b34a-7a23afcc35ea)
-
-![Screenshot_5](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/1792123a-4aed-4df9-973f-556ae6ffc7ff)
 
 - **Filtrado de Productos:** Utiliza la barra de búsqueda para filtrar productos por nombre o SKU. También puedes aplicar filtros adicionales según tus necesidades.
 ![Screenshot_2](https://github.com/juxnmxG/frontend-rocketfy/assets/61563571/a1ad6593-0239-4125-a635-570f2108f6f2)
