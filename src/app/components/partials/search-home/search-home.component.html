@@ -1,0 +1,35 @@
+<form class="w-6/12 block m-auto mt-2" [formGroup]="search" (ngSubmit)="handleSearch()">
+  <div class="flex">
+    <div class="relative w-full">
+      <input
+        formControlName="search"
+        type="text"
+        id="search"
+        class="block p-2.5 w-full z-20 text-sm rounded-tl-lg rounded-bl-lg text-custom-purple-700 bg-gray-50 rounded-r-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-blue-500 focus:border-custom-purple-600 dark:bg-custom-purple-400 dark:border-l-custom-purple-600 dark:border-custom-purple-600 dark:placeholder-custom-purple-700 dark:text-white dark:focus:border-custom-purple-400"
+        placeholder="Buscar..."
+        required
+      />
+      <button
+        type="submit"
+        class="absolute top-0 right-0 p-2.5 text-sm font-medium h-full text-white bg-custom-purple-600 rounded-r-lg border border-custom-purple-700 hover:bg-custom-purple-700 focus:ring-4 focus:outline-none focus:ring-custom-purple-600 dark:bg-custom-purple-600 dark:hover:bg-custom-purple-700 dark:focus:ring-blue-800"
+      >
+        <svg
+          class="w-4 h-4"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 20 20"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+          />
+        </svg>
+        <span class="sr-only">Buscar</span>
+      </button>
+    </div>
+  </div>
+</form>

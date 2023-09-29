@@ -1,0 +1,186 @@
+<form class="mt-6" [formGroup]="productForm" (ngSubmit)="createProduct()">
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        formControlName="name"
+        id="name"
+        name="name"
+        type="text"
+        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+        required
+      />
+      <label
+        for="name"
+        class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Nombre</label
+      >
+      <span
+        class="text-red-600"
+        *ngIf="
+          productForm.get('name')?.hasError('required') &&
+          productForm.get('name')?.touched
+        "
+        >El nombre es <strong>obligatorio</strong></span
+      >
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        formControlName="sku"
+        type="text"
+        name="sku"
+        id="sku"
+        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="sku"
+        class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >SKU</label
+      >
+      <span
+        class="text-red-600"
+        *ngIf="
+          productForm.get('sku')?.hasError('required') &&
+          productForm.get('sku')?.touched
+        "
+        >El SKU es <strong>obligatorio</strong></span
+      >
+    </div>
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        formControlName="price"
+        type="number"
+        name="price"
+        id="price"
+        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+        placeholder=""
+        required
+      />
+      <label
+        for="price"
+        class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Precio</label
+      >
+      <span
+        class="text-red-600"
+        *ngIf="
+          productForm.get('price')?.hasError('required') &&
+          productForm.get('price')?.touched
+        "
+        >El precio es <strong>obligatorio</strong></span
+      >
+    </div>
+    <div class="relative z-0 w-full mb-6 group">
+      <input
+        formControlName="stock"
+        type="number"
+        name="stock"
+        id="stock"
+        class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="stock"
+        class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Stock</label
+      >
+      <span
+        class="text-red-600"
+        *ngIf="
+          productForm.get('stock')?.hasError('required') &&
+          productForm.get('stock')?.touched
+        "
+        >El stock es <strong>obligatorio</strong></span
+      >
+    </div>
+  </div>
+
+  <div class="relative z-0 w-full mb-6 group">
+    <input
+      formControlName="image"
+      type="text"
+      name="image"
+      id="image"
+      class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="image"
+      class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Imagen</label
+    >
+    <span
+      class="text-red-600"
+      *ngIf="
+        productForm.get('image')?.hasError('required') &&
+        productForm.get('image')?.touched
+      "
+      >La imagen es <strong>obligatoria</strong></span
+    >
+  </div>
+  <div class="relative z-0 w-full mb-6 group">
+    <input
+      formControlName="tags"
+      type="text"
+      name="tags"
+      id="tags"
+      class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="tags"
+      class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Taks</label
+    >
+    <span class="text-custom-mint-green-700"
+      >Los tags deben ir separados por un ;
+    </span>
+    <span
+      class="text-red-600"
+      *ngIf="
+        productForm.get('tags')?.hasError('required') &&
+        productForm.get('tags')?.touched
+      "
+    >
+      los tags son <strong>obligatorios</strong></span
+    >
+  </div>
+  <div class="relative z-0 w-full mb-6 group">
+    <textarea
+      formControlName="description"
+      type="text"
+      name="description"
+      id="description"
+      class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-custom-purple-600 appearance-none dark:text-custom-purple-700 dark:border-custom-purple-700 dark:focus:border-custom-purple-600 focus:outline-none focus:ring-0 focus:border-custom-purple-600 peer"
+      placeholder=" "
+      required
+    ></textarea>
+    <label
+      for="description"
+      class="peer-focus:font-medium absolute text-sm text-custom-purple-700 dark:text-custom-purple-700 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-custom-purple-600 peer-focus:dark:text-custom-purple-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Descripción</label
+    >
+    <span
+      class="text-red-600"
+      *ngIf="
+        productForm.get('description')?.hasError('required') &&
+        productForm.get('description')?.touched
+      "
+      >El nombre es <strong>obligatorio</strong></span
+    >
+  </div>
+  <div class="w-full flex justify-end">
+    <button
+      type="submit"
+      class="text-white bg-custom-purple-700 hover:bg-custom-purple-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-custom-purple-600 dark:hover:bg-custom-purple-700 dark:focus:ring-blue-800"
+    >
+      Guardar
+    </button>
+  </div>
+</form>

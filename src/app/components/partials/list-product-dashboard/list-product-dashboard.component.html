@@ -1,0 +1,61 @@
+<div class="m-auto mt-6 relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table
+    class="w-full text-sm text-left text-custom-purple-600 dark:text-white"
+  >
+    <thead
+      class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-custom-purple-600 dark:text-white"
+    >
+      <tr>
+        <th scope="col" class="px-6 py-3">Nombre</th>
+        <th scope="col" class="px-6 py-3">SKU</th>
+        <th scope="col" class="px-6 py-3">Precio</th>
+        <th scope="col" class="px-6 py-3">Fecha de creación</th>
+        <th scope="col" class="px-6 py-3">Acciones</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="listProducts.length > 0">
+      <tr
+        *ngFor="
+          let product of listProducts
+            | paginate : { itemsPerPage: 6, currentPage: p }
+        "
+        class="bg-white dark:bg-custom-purple-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+      >
+        <th
+          scope="row"
+          class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+        >
+          {{ product.name }}
+        </th>
+        <td class="px-6 py-4">{{ product.sku }}</td>
+        <td class="px-6 py-4">{{ product.price | currency }}</td>
+        <td class="px-6 py-4">{{ product.create_at }}</td>
+        <td class="px-6 py-4 text-right">
+          <span class="flex gap-2"
+            ><i
+              class="fa-solid fa-pen-to-square cursor-pointer text-custom-mint-green-400 text-xl"
+              [routerLink]="['/product/edit', product._id]"
+            ></i
+            ><i
+              (click)="deleteProduct(product._id)"
+              class="fa-solid fa-trash cursor-pointer text-red-600 text-xl"
+            ></i
+          ></span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="w-full flex justify-center mt-2">
+    <pagination-controls
+      (pageChange)="p = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    ></pagination-controls>
+  </div>
+  <div
+    class="w-full flex justify-center p-6 text-custom-purple-700 text-xl"
+    *ngIf="listProducts.length === 0"
+  >
+    <p>Aún no hay elementos que mostrar</p>
+  </div>
+</div>

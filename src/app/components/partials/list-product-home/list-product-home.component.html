@@ -1,0 +1,46 @@
+<section
+  class="w-full flex justify-center p-6 gap-8 flex-wrap"
+  *ngIf="listProducts.length > 0"
+>
+  <div
+    class="bg-white max-w-sm rounded-3xl overflow-hidden shadow-lg w-72 cursor-pointer"
+    *ngFor="
+      let product of listProducts
+        | paginate : { itemsPerPage: 8, currentPage: p }
+    "
+    [routerLink]="['/product/detail/', product._id]"
+  >
+    <img class="w-full" [src]="product.image" alt="Sunset in the mountains" />
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2 text-custom-purple-600">
+        {{ product.name }}
+      </div>
+      <p class="text-gray text-base">
+        {{ product.description }}
+      </p>
+    </div>
+    <div class="px-6 pt-2 pb-2">
+      <span
+        *ngFor="let tag of product.tags"
+        class="inline-block bg-custom-mint-green-700 rounded-full px-3 py-1 text-sm font-semibold text-white mr-2 mb-2"
+        >#{{ tag }}</span
+      >
+    </div>
+    <div class="px-6 pb-2">
+      <p class="text-3xl text-">{{ product.price | currency }}</p>
+    </div>
+  </div>
+</section>
+<div class="w-full flex justify-center">
+  <pagination-controls
+    (pageChange)="p = $event"
+    previousLabel="Anterior"
+    nextLabel="Siguiente"
+  ></pagination-controls>
+</div>
+<h1
+  class="w-full flex justify-center p-6 gap-8 text-custom-purple-700 text-3xl"
+  *ngIf="listProducts.length === 0"
+>
+  Aún no hay elementos que mostrar
+</h1>
